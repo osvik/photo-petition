@@ -48,7 +48,7 @@ You may need to ensure the field names match the ones you are using in Engaging.
 ### B - The connection to Imgur
 
 1. Obtain a *client id* from IMGUR at https://api.imgur.com/oauth2/addclient
-- Change the authorization parameter `var client_id` at `index.html` (javascript)
+- Rename `config-DIST.js` to `config.js` and change the authorization parameter `var client_id`
 
 ### C - The connection to the mages database
 
