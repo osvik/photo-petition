@@ -1,4 +1,5 @@
+config.js
 node_modules/*
 assets/css/all.min.css
 assets/js/body.min.js
-
+api/config.php
