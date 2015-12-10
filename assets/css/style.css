@@ -1,0 +1,66 @@
+body {
+    color: #000;
+}
+
+.optional {
+    color: #B9B9B9;
+}
+
+.help-block {
+    color: #D4D4D4;
+}
+
+.form-control {
+    border: 1px solid #AFAFAF;
+}
+
+.optional .form-control {
+    color: #BBBABA;
+    border: 1px solid #ccc;
+}
+
+#postImageUploading, .error {
+    color: #f37b7d;
+}
+
+ul#imgurImageList {
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+
+#imgurImageList li {
+    list-style: none;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+}
+
+#imgurImageList img {
+    width: 125px;
+}
+
+#shareLinks ul, #memeLink ul {
+    margin: 0;
+    padding: 0;
+}
+
+#shareLinks li, #memeLink li {
+    list-style: none;
+    margin: 10px 0 10px 0;
+}
+
+@media ( min-width: 360px) {
+  
+    #imgurImageList img {
+        width: 145px;
+    }
+    
+}
+
+@media ( min-width: 480px) {
+  
+    #imgurImageList img {
+        width: 160px;
+    }
+    
+}

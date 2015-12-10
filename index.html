@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <title>Demo: Sign up and add a photo</title>
+    
+    <!-- Search engine metadata -->
+    <link rel="canonical" href="">
+    <meta name="robots" content="noindex">	
+    <meta name="description" content="">	
+    <!-- /Search engine metadata -->
+    
+    <!-- Open graph, twitter graph y G+ Publisher -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+    <meta property="fb:app_id" content="" />
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:description" content="">
+    
+    <link rel="publisher" href="https://plus.google.com/+" />
+    <!-- /Open graph, twitter graph y G+ Publisher -->
+    
+</head>
+<body>
+    
+    <div class="container">
+        
+		<div class="row">
+            
+            <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12">
+    
+                <!-- PHOTOS FORM -->
+                <form enctype="multipart/form-data" method="post" name="postImage" id="postImage">
+
+                    <h1>Demo: Sign up and add a photo</h1>
+
+                    <p>Your name and email will be automatically inserted in our <strong>Engaging Networks</strong> database.</p>
+                    
+                    <p>The <strong>photo</strong> you send us will be added to the <strong>photo gallery</strong> in this page. This gallery can be used on other pages and sites.</p>
+                    <p>After you send us a photo, with just one click you can <strong>share it</strong> in Facebook, Twitter and other <strong>redes sociales.</strong></p>
+                    <p>Click a button and you can easily create a meme from your photo in <a href="http://imgur.com/" target="_blank">Imgur</a>.</p>
+                    <div class="form-group">
+                        <label for="first_name">Name: <sup>*</sup></label>
+                        <input name="first_name" id="first_name" class="form-control" type="text" autocomplete="on" required="required"  />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email: <sup>*</sup></label>
+                        <input name="email" id="email" class="form-control" type="email" autocomplete="on"  required="required" />
+                    </div>
+
+                    <div class="form-group optional">  
+                        <label for="file">Photo:</label>
+                        <input type="file" name="file" id="file" accept="image/*;capture=camera" />
+                        <p class="help-block">Please send a .jpg file or use your mobile camera</p>
+                    </div>
+
+                    <div class="form-group optional">
+                        <label for="title">Photo title:</label>
+                        <input name="title" id="title" class="form-control" type="text" value="A title for this photo" maxlength="80" />
+                    </div>
+
+                    <div class="form-group optional">
+                        <label>Photo description:</label>
+                        <textarea name="description" id="description" class="form-control" maxlength="160" rows="3">Describe this photo. Title and and description will be displayed in the photo page, Facebook and other social networks.</textarea>
+                    </div>
+
+                    <div class="checkbox">
+                        <label for="privacy">
+                            <input type="checkbox" checked="checked" name="privacy" id="privacy" required="required" value="Y">
+                            I accept the privacy policy and I accept that my photo will be public. I'm this photo's copyright owner.
+                        </label>
+                    </div>
+                    
+                    <div class="buttoncontainer">
+                        <button id="send_button" type="submit" class="btn btn-info"> Send </button>
+                    </div>
+                </form>
+                <!-- /PHOTOS FORM -->
+
+                <!-- UPLOADING MESSAGE -->
+                <div id="postImageUploading" class="hidden">
+                    <p>Sending image, please wait…</p>
+                </div>
+                <!-- /UPLOADING MESSAGE -->
+
+                <!-- THANK YOU CARD -->
+                <div id="postImagethankyou" class="hidden">
+                    
+                    <h2>Thank you very much</h2>
+                    
+                    <div id="shareLinks" class="hidden">
+                        <p>Please share your photo in social media</p>
+                        <ul>
+                            <li><a id="facebookShareLink" target="_blank" href="" class="btn btn-default">Share in Facebook</a></li>
+                            <li><a id="twitterShareLink" target="_blank" href="" class="btn btn-default">Share in Twitter</a></li>
+                            <li><a id="googleplusShareLink" target="_blank" href="" class="btn btn-default">Share in Google+</a></li>
+                            <li><a id="linkedinShareLink" target="_blank" href="" class="btn btn-default">Share in Linkedin</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div id="memeLink" class="hidden">
+                        <p>And make a meme with your photo</p>
+                        <ul>
+                            <li><a id="memeShareLink" target="_blank" href="" class="btn btn-default">Create meme</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div id="uploadedPhoto" class="hidden">
+                        <h4>Your photo is online</h4>
+                        <p><img src="" alt="" class="img-responsive" /></p>
+                    </div>
+                    
+                </div>
+                <!-- /THANK YOU CARD -->
+    
+            </div>
+        
+            <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12">
+                
+                <h1>Latest photos</h1>
+
+                <!-- DISPLAY IMAGES -->
+                <ul id="imgurImageList"></ul>
+                
+            </div>
+        
+        </div><!-- /row -->
+    
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12">
+                <p>&nbsp;</p>
+            </div>
+        </div><!-- /row -->
+    
+    </div><!-- /container -->
+    
+    <script src="config.js"></script>
+    
+    <script src="assets/js/body.min.js"></script>
+    
+</body>
+</html>
