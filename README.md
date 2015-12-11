@@ -5,23 +5,21 @@ How to install and configure this script
 
 ### Download
 
-Using git:
+Clone the repository with git:
 
-`git clone `
+`git clone https://github.com/osvik/photo-petition.git`
 
 ### How to build he project:
 
-This project uses [Gulp](http://gulpjs.com/) to generate the css and javascript.
-
-To generate the code in the terminal run the following commands:
+This project uses [Gulp](http://gulpjs.com/) to generate the css and javascript. You need to install Gulp and the required modules. After that you need to generate the code in the terminal run the following commands:
 
 * `cd path/to/your/downloaded-site`
 * Install gulp (read bellow)
 * `gulp`
 
-### How to install Gulp
+#### How to install Gulp
 
-1. [Install Gulp](http://gulpjs.com/)
+* [Install Gulp](http://gulpjs.com/)
 
 You'll also need to install gulp's dependencies **in the site's folder** by running the commands:
 
@@ -35,7 +33,7 @@ You'll also need to install gulp's dependencies **in the site's folder** by runn
 
 ### A - The connection with Engaging Networks
 1. Create and publish a working data capture campaign and note the `CLIENT_ID`, `CAMPAING_ID` and `FORM_ID` values from it's form.
-- Edit the `campaign_id` and `form_id` in `api/config.php` adding the correct numbers from Engaging Networks:
+- Rename `api/config-DIST.php` to `api/config.php` and change `client_id`, `campaign_id` and `form_id` to match the numbers from the Engaging Networks form:
 
 ```
 define('CLIENT_ID', 'xxxx' );
@@ -43,7 +41,7 @@ define('CAMPAIGN_ID', 'xxxxx');
 define('FORM_ID', 'xxxx');
 ```
 
-You may need to ensure the field names match the ones you are using in Engaging.
+You need to confirm that the field names match the ones you are using in Engaging Networks. In case they don't you need to modify this script.
 
 ### B - The connection to Imgur
 
@@ -63,5 +61,6 @@ If the `api` folder is located a different server you may need to change the scr
 
 ## Translate
 
-Most translations can be done in `index.html`, including the `script` tag at the end.
+Most, if not all translations can be done editing the files `index.html` and `config.js`
+
 
